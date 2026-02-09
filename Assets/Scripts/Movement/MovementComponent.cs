@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovementComponent : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private IDirectionProvider directionProvider;
+    private SpeedProvider speedProvider;
+    private Rigidbody2D rb;
     void Start()
     {
-        
+        directionProvider = GetComponent<IDirectionProvider>();
+        speedProvider = GetComponent<SpeedProvider>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        rb.AddForce(directionProvider.GetCurrentDirection() * speedProvider.GetCurrentSpeed() * Time.deltaTime);
     }
 }

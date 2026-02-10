@@ -19,5 +19,6 @@ public struct AttackData
 
     [Header("World")]
     public GameObject Attacker;
+    public GameObject Defender;
     public Vector3 HitPoint;
 }

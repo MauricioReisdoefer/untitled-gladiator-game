@@ -5,9 +5,9 @@ using UnityEngine;
 public class RayAttackComponent : MonoBehaviour, IAttackComponent
 {
     public LayerMask layerMask;
-    public Collider2D[] GetAttackHits(Vector2 origin, Vector2 direction)
+    public Collider2D[] GetAttackHits(Vector2 origin, Vector2 direction, float distance)
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, Mathf.Infinity, layerMask);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, distance, layerMask);
 
         List<Collider2D> colliders = new List<Collider2D>();
 

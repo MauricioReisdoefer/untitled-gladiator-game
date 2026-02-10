@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAttackComponent
 {
-    public Collider2D[] GetAttackHits(Vector2 origin, Vector2 direction);
+    public Collider2D[] GetAttackHits(Vector2 origin, Vector2 direction, float distance);
 }

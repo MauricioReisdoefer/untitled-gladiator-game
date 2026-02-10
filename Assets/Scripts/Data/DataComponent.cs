@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DataComponent : MonoBehaviour, IDataComponent
 {
-    public PlayerData playerData;
+    public CombatData playerData;
     public IData GetData()
     {
         return playerData;

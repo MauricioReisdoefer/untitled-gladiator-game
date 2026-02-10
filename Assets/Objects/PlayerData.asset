@@ -15,3 +15,8 @@ MonoBehaviour:
   speed: 3000
   stopSpeed: 0.2
   dashSpeed: 0
+  attackRange: 3
+  damage: 3
+  knockback: 3
+  parryTime: 3
+  timeStartTime: 3

@@ -7,7 +7,6 @@ public struct AttackData
 {
     [Header("Damage")]
     public float damage;
-    public AttackType attackType;
 
     [Header("Physics")]
     public float knockback;
@@ -20,5 +19,4 @@ public struct AttackData
     [Header("World")]
     public GameObject Attacker;
     public GameObject Defender;
-    public Vector3 HitPoint;
 }

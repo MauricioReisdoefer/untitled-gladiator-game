@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BaseHealthComponent : MonoBehaviour, IHealthComponent
 {
-    protected float currentHealth;
-    protected float maxHealth;
+    [SerializeField] protected float currentHealth;
+    [SerializeField] protected float maxHealth;
 
     protected virtual void Start()
     {
@@ -20,6 +20,7 @@ public class BaseHealthComponent : MonoBehaviour, IHealthComponent
 
     public virtual void SufferDamage(float health)
     {
+        print("BaseHealthComponent: Sofri Dano");
         currentHealth -= health;
 
         if (currentHealth <= 0)

@@ -16,4 +16,8 @@ public struct AttackData
     [Tooltip("Janela de tempo (em segundos) em que o ataque pode ser aparado")]
     public float parryTime;
     public float timeStartTime;
+
+    [Header("World")]
+    public GameObject Attacker;
+    public Vector3 HitPoint;
 }

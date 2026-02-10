@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseSufferPipeline : MonoBehaviour
+public class BaseSufferPipeline : MonoBehaviour, ISufferPipeline
 {
-    // Start is called before the first frame update
-    void Start()
+    private IHealthComponent healthComponent;
+    private void Awake()
     {
-        
+        healthComponent = GetComponent<IHealthComponent>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SufferDamage(AttackData attackData)
     {
-        
+        healthComponent.SufferDamage(attackData.damage);
     }
 }

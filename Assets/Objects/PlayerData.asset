@@ -18,4 +18,4 @@ MonoBehaviour:
   attackRange: 3
   damage: 3
   knockback: 250
-  parryCooldown: 0.3
+  parryCooldown: 0.75

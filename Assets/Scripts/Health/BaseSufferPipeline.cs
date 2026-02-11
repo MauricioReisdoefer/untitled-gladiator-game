@@ -18,6 +18,10 @@ public class BaseSufferPipeline : MonoBehaviour, ISufferPipeline
         print("BaseSufferPipeline: Sofrendo Dano");
         foreach (ISufferModifier modifier in modifiers)
         {
+            if (modifier is IParryComponent parry && parry.IsParrying)
+            {
+                parry.OnSuccessfulParry(attackData);
+            }
             attackData.damage *= modifier.GetSufferModifier();
         }
         Vector2 knockbackDirection = attackData.Defender.transform.position - attackData.Attacker.transform.position;

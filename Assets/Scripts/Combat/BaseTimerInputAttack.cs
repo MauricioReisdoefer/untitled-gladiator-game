@@ -41,7 +41,7 @@ public class BaseTimerAttackInput : MonoBehaviour, IAttackInput
                 Defender = hit.gameObject,
                 knockback = playerData.knockback,
                 damage = playerData.damage,
-                parryTime = playerData.parryTime,
+                parryTime = playerData.parryCooldown,
                 timeStartTime = Time.time
             };
 

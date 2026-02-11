@@ -14,6 +14,5 @@ public class CombatData : ScriptableObject, IData
     public float attackRange;
     public float damage;
     public float knockback;
-    public float parryTime;
-    public float timeStartTime;
+    public float parryCooldown;
 }

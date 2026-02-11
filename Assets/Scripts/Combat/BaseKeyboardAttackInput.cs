@@ -24,7 +24,7 @@ public class BaseKeyboardAttackInput : MonoBehaviour, IAttackInput
             attackData.Defender = hit.gameObject;
             attackData.knockback = playerData.knockback;
             attackData.damage = playerData.damage;
-            attackData.parryTime = playerData.parryTime;
+            attackData.parryTime = playerData.parryCooldown;
             attackData.timeStartTime = Time.time;
             damageApplier.ApplyDamage(attackData);
         }

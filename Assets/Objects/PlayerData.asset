@@ -17,6 +17,5 @@ MonoBehaviour:
   dashSpeed: 0
   attackRange: 3
   damage: 3
-  knockback: 3
-  parryTime: 3
-  timeStartTime: 3
+  knockback: 250
+  parryCooldown: 0.3

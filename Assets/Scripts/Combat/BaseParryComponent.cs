@@ -7,10 +7,17 @@ public class BaseParryComponent : MonoBehaviour, IParryComponent, ISufferModifie
     [Header("Settings")]
     [SerializeField] private float parryWindowDuration = 0.25f;
 
+    private IFeedback[] feedbacks;
+
     private float parryTimer;
     private bool isParryActive;
 
     public bool IsParryActive => isParryActive;
+
+    private void Awake()
+    {
+        feedbacks = GetComponents<IFeedback>();
+    }
 
     private void Update()
     {
@@ -47,6 +54,11 @@ public class BaseParryComponent : MonoBehaviour, IParryComponent, ISufferModifie
     public void OnSuccessfulParry(AttackData attackData)
     {
         Debug.Log($"Parry perfeito contra {attackData.Attacker.name}!");
+        foreach(IFeedback feedback in feedbacks)
+        {
+            Vector2 middle = (attackData.Attacker.transform.position + attackData.Defender.transform.position) / 2;
+            feedback.RunFeedback(middle);
+        }
         isParryActive = false;
     }
 }

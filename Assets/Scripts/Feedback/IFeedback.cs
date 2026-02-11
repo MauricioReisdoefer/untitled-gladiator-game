@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IFeedback
 {
-    void RunFeedback();
+    void RunFeedback(Vector2 position);
 }

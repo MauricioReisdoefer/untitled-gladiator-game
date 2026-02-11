@@ -15,14 +15,16 @@ public class BaseSufferPipeline : MonoBehaviour, ISufferPipeline
     }
     public void SufferDamage(AttackData attackData)
     {
-        print("BaseSufferPipeline: Sofrendo Dano");
         foreach (ISufferModifier modifier in modifiers)
         {
-            if (modifier is IParryComponent parry && parry.IsParrying)
+            float modifierValue = modifier.GetSufferModifier();
+
+            if (modifier is IParryComponent parry && parry.IsParryActive)
             {
                 parry.OnSuccessfulParry(attackData);
             }
-            attackData.damage *= modifier.GetSufferModifier();
+
+            attackData.damage *= modifierValue;
         }
         Vector2 knockbackDirection = attackData.Defender.transform.position - attackData.Attacker.transform.position;
         rb.AddForce(knockbackDirection.normalized * attackData.knockback * attackData.damage);

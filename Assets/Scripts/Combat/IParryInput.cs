@@ -4,5 +4,4 @@ using UnityEngine;
 
 public interface IParryInput
 {
-    bool IsParryPressed();
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseParryInput : MonoBehaviour, IParryInput
+public class BaseParryInput : MonoBehaviour
 {
     private IParryComponent parryComponent;
 
@@ -13,12 +13,9 @@ public class BaseParryInput : MonoBehaviour, IParryInput
 
     private void Update()
     {
-        bool isPressed = IsParryPressed();
-        parryComponent.SetParryState(isPressed);
-    }
-
-    public bool IsParryPressed()
-    {
-        return Input.GetMouseButton(1);
+        if (Input.GetMouseButtonDown(1))
+        {
+            parryComponent?.TryActivateParry();
+        }
     }
 }

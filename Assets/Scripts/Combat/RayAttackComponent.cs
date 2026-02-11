@@ -7,14 +7,12 @@ public class RayAttackComponent : MonoBehaviour, IAttackComponent
     public LayerMask layerMask;
     public Collider2D[] GetAttackHits(Vector2 origin, Vector2 direction, float distance)
     {
-        print("RayAttackComponent: Detectando Hits");
         RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, distance, layerMask);
 
         List<Collider2D> colliders = new List<Collider2D>();
 
         if(hits.Length == 0)
         {
-            print("RayAttackComponent: Nenhum Hit Detectado");
             return new Collider2D[0];
         }
 

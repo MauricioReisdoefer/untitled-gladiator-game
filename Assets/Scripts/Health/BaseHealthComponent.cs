@@ -20,7 +20,7 @@ public class BaseHealthComponent : MonoBehaviour, IHealthComponent
 
     public virtual void SufferDamage(float health)
     {
-        print("BaseHealthComponent: Sofri Dano");
+        print("BaseHealthComponent: Sofri " + health + " de dano");
         currentHealth -= health;
 
         if (currentHealth <= 0)

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public interface IParryComponent
 {
-    bool IsParrying { get; }
+    bool IsParryActive { get; }
+
+    void TryActivateParry();         
     void OnSuccessfulParry(AttackData attackData);
-    void SetParryState(bool state);
 }

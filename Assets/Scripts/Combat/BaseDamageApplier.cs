@@ -18,10 +18,8 @@ public class BaseDamageApplier : MonoBehaviour, IDamageApplier
         ISufferPipeline pipeline = attackData.Defender.GetComponent<ISufferPipeline>();
         if (pipeline == null) 
         {
-            print("BaseDamageApplier: Pipeline não encontrada");
             return;
         }
-        print("BaseDamageApplier: Aplicando Dano à Pipeline");
         pipeline.SufferDamage(attackData);
     }
 }

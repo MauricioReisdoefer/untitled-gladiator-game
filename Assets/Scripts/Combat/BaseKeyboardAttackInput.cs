@@ -10,7 +10,6 @@ public class BaseKeyboardAttackInput : MonoBehaviour, IAttackInput
     private DataComponent dataComponent;
     public void ExecuteAttack()
     {
-        print("BaseKeyboardAttackInput: Ataque Iniciado");
         IData data = dataComponent.GetData();
         CombatData playerData = data as CombatData;
 

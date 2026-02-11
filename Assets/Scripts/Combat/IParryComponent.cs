@@ -6,4 +6,5 @@ public interface IParryComponent
 {
     bool IsParrying { get; }
     void OnSuccessfulParry(AttackData attackData);
+    void SetParryState(bool state);
 }
